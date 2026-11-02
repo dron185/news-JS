@@ -4,3 +4,8 @@ declare namespace NodeJS {
         API_KEY: string;
     }
 }
+
+declare module '*.css';
+declare module '*.jpg';
+declare module '*.png';
+declare module '*.svg';
