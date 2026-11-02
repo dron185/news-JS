@@ -1,35 +1,152 @@
+/* Сброс стилей и базовые настройки */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     color: #fff;
     background: #17181c;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Чтобы футер всегда был внизу */
 }
 
+/* Шапка */
 header {
-    padding: 10px 30px;
+    padding: 20px 30px;
+    text-align: center;
+    background: #1f2128; /* Чуть светлее фона */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 800;
+    margin: 0;
+    letter-spacing: 1px;
 }
 
+/* Основной контент */
+main {
+    flex: 1; /* Растягивает main на все свободное место */
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Кнопки источников (Sources) */
+.sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.source__item {
+    background: #2a2c33;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border: 1px solid #3b3e47;
+    font-size: 14px;
+    user-select: none;
+}
+
+.source__item:hover {
+    background: #3b3e47;
+    transform: translateY(-2px);
+}
+
+/* Сетка для новостей */
+.news {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* Футер */
 footer {
-    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f2128;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 1px solid #2a2c33;
+}
+
+.container-footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 15px;
 }
+
 footer .copyright {
     font-size: 14px;
-    color: #333;
+    color: #888;
     text-align: center;
 }
+
 footer .copyright a {
-    color: #444;
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
 }
+
 footer .copyright a:hover {
-    color: #555;
+    color: #fff;
 }
-footer .copyright:before {
-    content: '©';
+
+.footer__copy {
+    color: #888;
+    font-size: 18px;
+}
+
+.footer__copy-link {
+    margin-left: 20px;
+    color: #5ad67d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer__copy-link:hover {
+    text-decoration: underline;
+}
+
+.footer__course-link img {
+    width: 100px;
+    height: 50px;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    filter: invert(1);
+    transition: opacity 0.3s;
+}
+
+.footer__course-link img:hover {
+    opacity: 0.7;
+}
+
+/* Адаптивность для мобилок (от 320px) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 20px 10px;
+    }
+
+    .news {
+        grid-template-columns: 1fr;
+    }
 }
