@@ -27,7 +27,7 @@ class Loader {
 
     makeUrl(options: Partial<RequestOptions>, endpoint: Endpoint): string {
         const urlOptions: RequestOptions = { ...this.options, ...options } as RequestOptions;
-        let url = `${this.baseLink}${endpoint}?`;
+        let url = `${this.baseLink}mocks/${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key) => {
             url += `${key}=${urlOptions[key]}&`;
