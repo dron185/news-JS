@@ -2,7 +2,6 @@ import { Callback, Endpoint, HttpMethod, RequestOptions, RequestParams } from '.
 
 class Loader {
     private baseLink: string;
-    // Readonly + Partial — Utility Types
     private options: Readonly<Partial<RequestOptions>>;
 
     constructor(baseLink: string, options: Readonly<Partial<RequestOptions>>) {
@@ -10,7 +9,6 @@ class Loader {
         this.options = options;
     }
 
-    // Generic <T> + Function Type Callback<T>
     public getResp<T>({ endpoint, options = {} }: RequestParams, callback: Callback<T>): void {
         this.load<T>(HttpMethod.GET, endpoint, callback, options);
     }

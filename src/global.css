@@ -11,14 +11,14 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Чтобы футер всегда был внизу */
+    min-height: 100vh;
 }
 
 /* Шапка */
 header {
     padding: 20px 30px;
     text-align: center;
-    background: #1f2128; /* Чуть светлее фона */
+    background: #1f2128;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -31,7 +31,7 @@ header h1 {
 
 /* Основной контент */
 main {
-    flex: 1; /* Растягивает main на все свободное место */
+    flex: 1;
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;

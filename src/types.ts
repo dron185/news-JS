@@ -1,4 +1,3 @@
-// ===== ENUMS =====
 export enum Endpoint {
     Sources = 'sources',
     Everything = 'everything',
@@ -8,7 +7,6 @@ export enum HttpMethod {
     GET = 'GET',
 }
 
-// ===== INTERFACES =====
 export interface Source {
     id: string;
     name: string;
@@ -20,11 +18,9 @@ export interface Source {
 }
 
 export interface Article {
-    // Utility Type Pick — берём только нужные поля из Source
     source: Pick<Source, 'id' | 'name'>;
     author: string | null;
     title: string;
-    // Union Type — строка ИЛИ null
     description: string | null;
     url: string;
     urlToImage: string | null;
@@ -33,7 +29,6 @@ export interface Article {
 }
 
 export interface NewsResponse {
-    // Union Type
     status: 'ok' | 'error';
     totalResults: number;
     articles: Article[];
@@ -44,7 +39,6 @@ export interface SourcesResponse {
     sources: Source[];
 }
 
-// ===== GENERICS / FUNCTION TYPES =====
 export type Callback<T> = (data: T) => void;
 
 export type RequestOptions = Record<string, string>;
